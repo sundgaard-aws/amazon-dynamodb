@@ -20,3 +20,18 @@ py -m pip install -r requirements.txt
 
 https://docs.python.org/3/library/venv.html
 https://pip.pypa.io/en/latest/user_guide/#requirements-files
+
+# boto3 dynamodb
+https://boto3.amazonaws.com/v1/documentation/api/latest/guide/dynamodb.html
+
+# batch write
+with table.batch_writer() as batch:
+    for i in range(50):
+        batch.put_item(
+            Item={
+                'account_type': 'anonymous',
+                'username': 'user' + str(i),
+                'first_name': 'unknown',
+                'last_name': 'unknown'
+            }
+        )
