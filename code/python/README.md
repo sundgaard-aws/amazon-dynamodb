@@ -18,8 +18,11 @@ py -m pip list
 py -m pip install -r requirements.txt
 ```
 
+# Links
 https://docs.python.org/3/library/venv.html
 https://pip.pypa.io/en/latest/user_guide/#requirements-files
+https://www.section.io/engineering-education/python-boto3-and-amazon-dynamodb-programming-tutorial/
+https://boto3.amazonaws.com/v1/documentation/api/latest/guide/dynamodb.html
 
 # boto3 dynamodb
 https://boto3.amazonaws.com/v1/documentation/api/latest/guide/dynamodb.html
