@@ -57,6 +57,8 @@
         {
             Trade newTrade = new Trade
             {
+                TradeGUID=Guid.NewGuid().ToString(),
+                TradeDate=DateTime.Now
             };
             var tradeBatch = context.CreateBatchWrite<Trade>();
             tradeBatch.AddPutItem(newTrade);
@@ -110,7 +112,7 @@
             }
         }        
 
-        public async Task QueryTradesByDate(IDynamoDBContext context, string threadSubject)
+        public async Task QueryTradesByDate(IDynamoDBContext context, string tradeGUID)
         {
             DateTime twoWeeksAgoDate = DateTime.UtcNow - TimeSpan.FromDays(15);
             List<object> times = new List<object>();
@@ -125,7 +127,7 @@
                 QueryFilter = scs,
             };
 
-            var response = context.QueryAsync<Trade>(cfg);
+            var response = context.QueryAsync<Trade>(tradeGUID, cfg);
             var tradeScanResult = await response.GetRemainingAsync();
 
             Console.WriteLine("\nTrades:");
