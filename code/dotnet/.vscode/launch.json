@@ -5,7 +5,7 @@
             // Use IntelliSense to find out which attributes exist for C# debugging
             // Use hover for the description of the existing attributes
             // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
-            "name": ".NET Core Launch (console)",
+            "name": "Console",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
@@ -15,7 +15,13 @@
             "cwd": "${workspaceFolder}/console",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
-            "stopAtEntry": false
+            "stopAtEntry": false,
+            "envFile": "${workspaceFolder}\\local\\.env",            
+            "logging": {
+                "moduleLoad": false
+            },
+            "justMyCode": false,
+            "enableStepFiltering": false
         },
         {
             "name": ".NET Core Attach",
